@@ -12,4 +12,14 @@ CREATE TABLE checkout (
     price INT
 );
 
+CREATE TABLE products (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR,
+    description VARCHAR,
+    photo VARCHAR,
+    price INT
+);
+
+INSERT INTO products
+
 ALTER TABLE checkout ADD price INT DEFAULT 0;

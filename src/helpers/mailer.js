@@ -59,7 +59,7 @@ const sendGmail = async( name, email, phone, address, city, zip_code, country, s
     //   text: `This is your OTP code ${subject} you can go back to Izdihar Website`
     // }
   
-    let info = await transporter.sendMail({
+    await transporter.sendMail({
       from: process.env.MAIL_USERNAME,
       to: ownEmail,
       subject: `New Order`,
@@ -75,7 +75,7 @@ const sendGmail = async( name, email, phone, address, city, zip_code, country, s
       Price     : ${price} `
     })
     console.log('email sent');
-    console.log(info.response);
+    // console.log(info.response);
   } catch (error) {
     console.log(error);
   }
