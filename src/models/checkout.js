@@ -5,7 +5,7 @@ const insert = (data) => {
     return pool.query(`INSERT INTO checkout(name, email, phone, address, city, zip_code, country, shipping, product, price)VALUES('${name}', '${email}', '${phone}', '${address}', '${city}', '${zip_code}', '${country}', '${shipping}', '${product}', ${price})`)
 }
 
-const get = (id) => {
+const get = () => {
     return pool.query(`SELECT * FROM checkout`)
 }
 
