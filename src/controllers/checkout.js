@@ -25,6 +25,7 @@ exports.getCheckout = async(req,res) => {
         const {rows} = await checkoutModel.get();
         response(res, rows, 'success', 200, 'Get data checkout success')
     } catch (error) {
+        console.log(error);
         response(res, null, 'failed', 400, 'Get data checkout failed')  
     }
 }

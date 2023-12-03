@@ -2,6 +2,7 @@ require("dotenv").config();
 const express = require('express')
 const app = express()
 const mainRouter = require('./src/routes/index')
+// eslint-disable-next-line no-undef
 const PORT = process.env.PORT || 5000
 const morgan = require('morgan')
 const helmet  = require('helmet')
@@ -16,8 +17,12 @@ app.use(express.urlencoded({extended: false}))
 // }))
 app.use(helmet())
 app.use(xss())
-
-app.use(cors())
+const corsOrigin ={
+  origin:'http://localhost:3000',
+  credentials:true,            
+  optionSuccessStatus:200
+}
+app.use(cors(corsOrigin))
 app.use(morgan('dev'))
 
 
